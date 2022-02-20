@@ -11,6 +11,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        getDataBinding().testText.text="testing app"
     }
 }
