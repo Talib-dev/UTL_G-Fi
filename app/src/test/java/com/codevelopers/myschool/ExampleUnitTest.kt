@@ -1,4 +1,4 @@
-package com.coDevelopers.myschool
+package com.codevelopers.myschool
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.coDevelopers.myschool
+package com.codevelopers.myschool.ui.base
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

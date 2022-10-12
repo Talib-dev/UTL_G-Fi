@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+
 }
 
 android {
@@ -12,7 +15,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.coDevelopers.myschool"
+        applicationId "com.codevelopers.myschool"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -52,4 +55,7 @@ dependencies {
     // For Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version_ktx"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version_ktx"
+
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 }
