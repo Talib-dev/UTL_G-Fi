@@ -1,10 +1,10 @@
-package com.codevelopers.myschool.ui.login
+package com.kura.utl.ui.login
 
 import android.os.Bundle
 import android.view.View
-import com.codevelopers.myschool.R
-import com.codevelopers.myschool.databinding.FragmentLoginBinding
-import com.codevelopers.myschool.ui.base.BaseFragment
+import com.kura.utl.R
+import com.kura.utl.databinding.FragmentLoginBinding
+import com.kura.utl.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 

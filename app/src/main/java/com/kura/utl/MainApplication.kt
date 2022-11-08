@@ -1,4 +1,4 @@
-package com.codevelopers.myschool
+package com.kura.utl
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

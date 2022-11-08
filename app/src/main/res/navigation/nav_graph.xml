@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.codevelopers.myschool.ui.login.LoginFragment"
+        android:name="com.kura.utl.ui.login.LoginFragment"
         android:label="LoginFragment" />
 </navigation>

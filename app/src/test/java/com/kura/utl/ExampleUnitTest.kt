@@ -1,4 +1,4 @@
-package com.codevelopers.myschool
+package com.kura.utl
 
 import org.junit.Test
 

@@ -1,9 +1,9 @@
-package com.codevelopers.myschool.ui
+package com.kura.utl.ui
 
 import android.os.Bundle
-import com.codevelopers.myschool.ui.base.BaseActivity
-import com.codevelopers.myschool.R
-import com.codevelopers.myschool.databinding.ActivityMainBinding
+import com.kura.utl.ui.base.BaseActivity
+import com.kura.utl.R
+import com.kura.utl.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
