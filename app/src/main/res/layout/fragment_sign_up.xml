@@ -23,17 +23,30 @@
             app:layout_constraintVertical_bias="0.7">
 
             <EditText
-                android:id="@+id/etEmailLogin"
+                android:id="@+id/etFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="74dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="32dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/shape_rec"
-                android:drawableStart="@drawable/ic_email"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/ic_person_primery"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                android:padding="16dp" />
+
+            <EditText
+                android:id="@+id/etMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/shape_rec"
+                android:drawableStart="@drawable/ic_baseline_local_phone"
+                android:hint="Mobile number"
+                android:inputType="phone"
                 android:padding="16dp" />
 
             <EditText
@@ -45,20 +58,34 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/shape_rec"
                 android:drawableStart="@drawable/ic_lock"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="16dp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/shape_rec"
+                android:drawableStart="@drawable/ic_lock"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="16dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/etDeviceId"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
-                android:gravity="center"
-                android:text="forgot password?"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/shape_rec"
+                android:drawableStart="@drawable/ic_device_information"
+                android:hint="Device serial no"
+                android:inputType="textPassword"
+                android:padding="16dp" />
 
 
             <TextView
@@ -80,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
-                android:text="Don't have account?"
+                android:text="already have an account?"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
-                android:text="Sign up"
+                android:text="Login"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -102,4 +129,5 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

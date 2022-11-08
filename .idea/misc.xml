@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/btn_background.xml" value="0.115" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/card_shap.xml" value="0.115" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_device_information.xml" value="0.115" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_email.xml" value="0.115" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_lock.xml" value="0.115" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/shape_rec.xml" value="0.115" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/layout/fragment_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/PersonalProjects/MySchool/MySchool/app/src/main/res/layout/activity_base.xml" value="0.25416666666666665" />
         <entry key="..\:/PersonalProjects/MySchool/MySchool/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
         <entry key="..\:/PersonalProjects/MySchool/MySchool/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
