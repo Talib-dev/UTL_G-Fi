@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1088112626173",
+    "project_id": "utl-g-fi",
+    "storage_bucket": "utl-g-fi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088112626173:android:2d3365b840c03d24df7194",
+        "android_client_info": {
+          "package_name": "com.kura.utl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088112626173-8qrn75hu5gvft5fgena8ll6ogckia9tb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOvcxakkqiT3oWWmpDj2OmEmvXkoV6clw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1088112626173-8qrn75hu5gvft5fgena8ll6ogckia9tb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
