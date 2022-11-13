@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "1088112626173",
-    "project_id": "utl-g-fi",
-    "storage_bucket": "utl-g-fi.appspot.com"
+    "project_number": "683503852013",
+    "firebase_url": "https://utl-g-fi-ce9e3-default-rtdb.firebaseio.com",
+    "project_id": "utl-g-fi-ce9e3",
+    "storage_bucket": "utl-g-fi-ce9e3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1088112626173:android:2d3365b840c03d24df7194",
+        "mobilesdk_app_id": "1:683503852013:android:efc63fb48054fe93d6afe4",
         "android_client_info": {
           "package_name": "com.kura.utl"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1088112626173-8qrn75hu5gvft5fgena8ll6ogckia9tb.apps.googleusercontent.com",
+          "client_id": "683503852013-gl202e04ud0pu9b4veag5gj2d1en911o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDOvcxakkqiT3oWWmpDj2OmEmvXkoV6clw"
+          "current_key": "AIzaSyCxdNLrU7ix44-kohJAqnyiuqFKyNOK7qc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1088112626173-8qrn75hu5gvft5fgena8ll6ogckia9tb.apps.googleusercontent.com",
+              "client_id": "683503852013-gl202e04ud0pu9b4veag5gj2d1en911o.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

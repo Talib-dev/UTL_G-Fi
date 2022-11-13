@@ -34,6 +34,7 @@ class TCPClient {
     }
 
     private fun connect(ip: String, port: Int) {
+        mSocket = Socket()
         mRun = true
         var serverMessage: String?
         try {
@@ -45,7 +46,7 @@ class TCPClient {
                 mConnectListener!!.connected(mSocket, ip, port)
             }
         } catch (e: Exception) {
-            e.printStackTrace()
+            Log.e("TCPClient", "Socket: ${e.message}", e)
             if (!mSocket.isClosed) {
                 try {
                     mSocket.close()

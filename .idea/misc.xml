@@ -5,11 +5,16 @@
       <map>
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/btn_background.xml" value="0.115" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/card_shap.xml" value="0.115" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_add.xml" value="0.1895" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_baseline_local_phone.xml" value="0.1895" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_bg.xml" value="0.1895" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_configuration.xml" value="0.1895" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_device_information.xml" value="0.115" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_email.xml" value="0.115" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_lock.xml" value="0.115" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_router.xml" value="0.112" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/shape_rec.xml" value="0.115" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/layout/activity_main.xml" value="0.2421875" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/layout/fragment_deshbored.xml" value="0.25416666666666665" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/layout/fragment_device_configuration.xml" value="0.25416666666666665" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/layout/fragment_get_wifi.xml" value="0.25416666666666665" />

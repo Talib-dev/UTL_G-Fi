@@ -3,8 +3,10 @@ package com.kura.utl.ui.deviceconfiguration
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.kura.utl.R
 import com.kura.utl.Utils.Utils
@@ -39,7 +41,7 @@ class DeviceConfigurationFragment : BaseFragment<FragmentDeviceConfigurationBind
         mBinding.btGotoWifi.setOnClickListener {
             gotoWiFi()
         }
-        mBinding.btGotoWifi.setOnClickListener {
+        mBinding.btSendMsg.setOnClickListener {
             connectWithDevice()
         }
     }
@@ -49,35 +51,37 @@ class DeviceConfigurationFragment : BaseFragment<FragmentDeviceConfigurationBind
     }
 
     private fun connectWithDevice() {
-        scope.launch {
-            tcpClient.connectInSeparateThread(Utils.deviceIP, Utils.devicePORT)
-        }
-        tcpClient.setListener(object : TCPClient.OnConnectionListener {
-            override fun connected(socket: Socket, ip: String, port: Int) {
-                toast("connected")
-            }
+        tcpClient.connectInSeparateThread(Utils.deviceIP, Utils.devicePORT)
+        lifecycleScope.launch {
+            tcpClient.setListener(object : TCPClient.OnConnectionListener {
+                override fun connected(socket: Socket, ip: String, port: Int) {
+                    Log.e("DeviceConfigurationFragment", "connected " )
+                }
 
-            override fun messageReceived(message: String) {
-                when (message) {
-                    "OK" -> {
-                        Toast.makeText(context, "successfully registered ", Toast.LENGTH_SHORT).show()
-                        navigateToDashboard()
+                override fun messageReceived(message: String) {
+                    when (message) {
+                        "OK" -> {
+                            Log.e("DeviceConfigurationFragment", "successfully registered " )
+                            navigateToDashboard()
 
-                    }
-                    "FAIL" -> {
-                        Toast.makeText(context, "registered failed", Toast.LENGTH_SHORT).show()
+                        }
+                        "FAIL" -> {
+                            Toast.makeText(context, "registered failed", Toast.LENGTH_SHORT).show()
+                            Log.e("DeviceConfigurationFragment", "registered failed" )
+                        }
+                        else -> {
+                            Log.e("DeviceConfigurationFragment", message )
 
-                    }
-                    else -> {
-                        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
-            }
 
-            override fun disconnected(ip: String, port: Int) {
-                toast("disconnected")
-            }
-        })
+                override fun disconnected(ip: String, port: Int) {
+                    Log.e("DeviceConfigurationFragment", "disconnected: ", )
+                }
+            })
+
+        }
     }
 
 
