@@ -2,5 +2,13 @@
     <string name="app_name">UTL G-Fi</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="add_device_lablel">Add Device</string>
+    <string name="add_device">Add Device</string>
+    <string name="disconnecting">Disconnected</string>
+    <string name="connected">Connected</string>
+    <string name="connecting">Connecting</string>
+    <string name="sending_data">sharing router details to device</string>
+    <string name="connecting_device_to_server">connecting to server</string>
+    <string name="added_device">Device added successfully</string>
+    <string name="failed">"Fail to connect"</string>
+    <string name="error">Something went wrong!</string>
 </resources>

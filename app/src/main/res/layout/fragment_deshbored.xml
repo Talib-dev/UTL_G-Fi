@@ -39,7 +39,7 @@
             android:id="@+id/efAddDevice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_device_lablel"
+            android:text="@string/add_device"
             app:icon="@drawable/ic_add"
             app:layout_constraintHorizontal_bias="0.95"
             app:layout_constraintVertical_bias="0.95"

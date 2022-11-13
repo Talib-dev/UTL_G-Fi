@@ -23,13 +23,12 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
     override fun getLayoutId(): Int = R.layout.fragment_sign_up
     private lateinit var mBinding: FragmentSignUpBinding
 
-    private lateinit var fAuth: FirebaseAuth
+    private  var fAuth: FirebaseAuth= FirebaseAuth.getInstance()
     var database = FirebaseDatabase.getInstance()
     var myRef = database.getReference("UTL_G-Fi")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        fAuth = FirebaseAuth.getInstance()
 
     }
 

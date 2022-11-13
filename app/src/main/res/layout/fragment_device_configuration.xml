@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/large_margin"
                 android:layout_marginBottom="8dp"
-                android:text="step 1- Click on Connect with ESP 32 button and connect with esESP 32 WiFi Network" />
+                android:text="step 1- Click on Connect with ESP 32 button and connect with ESP_32 WiFi Network" />
 
             <TextView
                 android:id="@+id/bt_goto_wifi"
@@ -86,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:text="step 2- after connect with ESP 32 click back button." />
+                android:text="step 2- After connect with ESP 32, click back button." />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -116,9 +116,10 @@
 
                 <ProgressBar
                     android:id="@+id/progress_bar"
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"/>
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:visibility="gone"/>
             </LinearLayout>
 
 
