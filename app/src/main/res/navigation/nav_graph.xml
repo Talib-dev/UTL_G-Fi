@@ -22,9 +22,43 @@
         <action
             android:id="@+id/action_signUpFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_getWiFiFragment"
+            app:destination="@id/getWiFiFragment" />
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.kura.utl.ui.dashboard.DashboardFragment"
-        android:label="DashboardFragment" />
+        android:label="DashboardFragment" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_getWiFiFragment"
+            app:destination="@id/getWiFiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/getWiFiFragment"
+        android:name="com.kura.utl.ui.deviceconfiguration.GetWiFiFragment"
+        android:label="GetWiFiFragment" >
+        <action
+            android:id="@+id/action_getWiFiFragment_to_deviceConfigurationFragment"
+            app:destination="@id/deviceConfigurationFragment" />
+        <argument
+            android:name="deviceId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/deviceConfigurationFragment"
+        android:name="com.kura.utl.ui.deviceconfiguration.DeviceConfigurationFragment"
+        android:label="DeviceConfigurationFragment" >
+        <action
+            android:id="@+id/action_deviceConfigurationFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <argument
+            android:name="deviceId"
+            app:argType="string" />
+        <argument
+            android:name="wifiName"
+            app:argType="string" />
+        <argument android:name="wifiPassword"
+            app:argType="string" />
+    </fragment>
 </navigation>

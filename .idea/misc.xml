@@ -8,8 +8,11 @@
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_device_information.xml" value="0.115" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_email.xml" value="0.115" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_lock.xml" value="0.115" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/ic_router.xml" value="0.112" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/drawable/shape_rec.xml" value="0.115" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/layout/fragment_deshbored.xml" value="0.25416666666666665" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/layout/fragment_device_configuration.xml" value="0.25416666666666665" />
+        <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/layout/fragment_get_wifi.xml" value="0.25416666666666665" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/layout/fragment_login.xml" value="0.2" />
         <entry key="..\:/Kura/UTL_G-Fi/UTL_G-Fi/app/src/main/res/layout/fragment_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/PersonalProjects/MySchool/MySchool/app/src/main/res/layout/activity_base.xml" value="0.25416666666666665" />

@@ -9,8 +9,10 @@ import com.kura.utl.R
 import com.kura.utl.databinding.FragmentDeshboredBinding
 import com.kura.utl.databinding.FragmentLoginBinding
 import com.kura.utl.ui.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class DashboardFragment: BaseFragment<FragmentDeshboredBinding>() {
     override fun getLayoutId(): Int = R.layout.fragment_deshbored
     private lateinit var mBinding: FragmentDeshboredBinding
@@ -18,7 +20,6 @@ class DashboardFragment: BaseFragment<FragmentDeshboredBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mBinding=getDataBinding()
-
 
     }
 }

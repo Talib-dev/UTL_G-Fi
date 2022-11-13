@@ -1,4 +1,4 @@
-package com.kura.utl.ui.datalayer.modal
+package com.kura.utl.datalayer.modal
 
 /** userType 0 - user
  * 1 - admin

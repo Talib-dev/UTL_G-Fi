@@ -47,7 +47,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         }
     }
 
-    fun login() {
+    private fun login() {
         val email = mBinding.etEmailLogin.text.toString().trim()
         val password = mBinding.etPassLogin.text.toString().trim()
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
