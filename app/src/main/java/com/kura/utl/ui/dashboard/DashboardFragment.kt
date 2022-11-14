@@ -33,13 +33,20 @@ class DashboardFragment: BaseFragment<FragmentDeshboredBinding>() {
           navigateToLogin()
        }
 
+        mBinding.toolbar.ivBack.setOnClickListener {
+            mBinding.toolbar.toolbar.visibility=View.VISIBLE
+            mBinding.toolbar.clSearch.visibility=View.GONE
+
+        }
+
 
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.menu_configuration -> {
-                // TODO: User clicked the save button
+            R.id.menu_search -> {
+              mBinding.toolbar.toolbar.visibility=View.GONE
+                mBinding.toolbar.clSearch.visibility=View.VISIBLE
                 true
             }
             else -> super.onOptionsItemSelected(item)
