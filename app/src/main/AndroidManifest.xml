@@ -12,7 +12,8 @@
         android:theme="@style/Theme.UTL">
         <activity
             android:name="com.kura.utl.ui.base.BaseActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.kura.utl.ui.MainActivity"
             android:exported="true">

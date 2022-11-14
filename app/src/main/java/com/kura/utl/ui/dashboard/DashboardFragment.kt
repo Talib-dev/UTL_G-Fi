@@ -1,17 +1,13 @@
 package com.kura.utl.ui.dashboard
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.kura.utl.R
 import com.kura.utl.databinding.FragmentDeshboredBinding
-import com.kura.utl.databinding.FragmentLoginBinding
 import com.kura.utl.ui.base.BaseFragment
-import com.kura.utl.ui.login.LoginFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -24,8 +20,12 @@ class DashboardFragment: BaseFragment<FragmentDeshboredBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-       fAuth.currentUser?.let {
+        fAuth.currentUser?.let {
            mBinding=getDataBinding()
+            mBinding.toolbar.toolbar.inflateMenu(R.menu.home_menu)
+            mBinding.toolbar.toolbar.setOnMenuItemClickListener {
+                onOptionsItemSelected(it)
+            }
            mBinding.efAddDevice.setOnClickListener {
                navigateToGetWiFiFragment()
            }
@@ -34,6 +34,16 @@ class DashboardFragment: BaseFragment<FragmentDeshboredBinding>() {
        }
 
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_configuration -> {
+                // TODO: User clicked the save button
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
 

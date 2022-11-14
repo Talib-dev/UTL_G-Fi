@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  >
+
+    <item
+        android:id="@+id/menu_search"
+        android:title="Search"
+        android:icon="@drawable/ic_search"
+        android:showAsAction="always" />
+    <item
+        android:id="@+id/menu_configuration"
+        android:title="Configuration" />
+    <item
+        android:id="@+id/menu_user"
+        android:title="User" />
+    <item
+        android:id="@+id/menu_help"
+        android:title="Help" />
+    <item
+        android:id="@+id/menu_logout"
+        android:title="Logout" />
+</menu>

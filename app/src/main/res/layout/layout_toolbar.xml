@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darkPrimaryColor"
+        >
+
+        <Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:title="@string/app_name"
+            android:titleTextColor="@color/text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <LinearLayout
+                android:id="@+id/search_layout_parent"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="center_vertical"
+                android:minHeight="?attr/actionBarSize"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/search_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:src="@drawable/ic_arrow" />
+
+                <TextView
+                    android:id="@+id/iv_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:background="@drawable/btn_background"
+                    android:padding="@dimen/searchbar_padding"
+                    android:text="Name"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:backgroundTint="@color/accentColor"
+                    />
+
+                <EditText
+                    android:id="@+id/search_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:hint="Search"
+                    android:imeOptions="actionSearch|flagNoExtractUi"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightPrimaryColor"
+                   />
+
+                <ImageView
+                    android:id="@+id/search_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_close"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
