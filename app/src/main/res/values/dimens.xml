@@ -5,6 +5,11 @@
     <dimen name="small_margin">8dp</dimen>
     <dimen name="extra_large_margin">74dp</dimen>
     <dimen name="large_margin">32dp</dimen>
-    <dimen name="toolbar_text">21sp</dimen>
     <dimen name="searchbar_padding">10dp</dimen>
+
+    //fonts
+    <dimen name="toolbar_text">21sp</dimen>
+    <dimen name="font_heading">21sp</dimen>
+    <dimen name="font_sub_heading">16sp</dimen>
+
 </resources>

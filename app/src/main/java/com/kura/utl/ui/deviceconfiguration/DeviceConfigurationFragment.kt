@@ -34,16 +34,15 @@ class DeviceConfigurationFragment : BaseFragment<FragmentDeviceConfigurationBind
     private var mStatus = 0
     private var dataString = ""
     private val args: DeviceConfigurationFragmentArgs by navArgs()
-    private  var fAuth: FirebaseAuth = FirebaseAuth.getInstance()
+    private var fAuth: FirebaseAuth = FirebaseAuth.getInstance()
     var database = FirebaseDatabase.getInstance()
     var myRef = database.getReference("UTL_G-Fi")
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         tcpClient = TCPClient()
-        dataString = args.deviceId + "," + args.wifiName + ","+args.wifiPassword
+        dataString = args.deviceId + "," + args.wifiName + "," + args.wifiPassword
     }
 
 
@@ -102,7 +101,7 @@ class DeviceConfigurationFragment : BaseFragment<FragmentDeviceConfigurationBind
     }
 
     fun setStatus(status: Int) {
-        lifecycleScope.launch{
+        lifecycleScope.launch {
 
             mStatus = status
             when (status) {
@@ -170,9 +169,10 @@ class DeviceConfigurationFragment : BaseFragment<FragmentDeviceConfigurationBind
 
 
     private fun addInDB() {
-        fAuth.uid?.let { user ->
-            val device=Device(args.deviceId, user)
-            myRef.child(user).child(Utils.userInfo).setValue(device)
+        fAuth.uid?.let { uid ->
+            val device = Device(args.deviceId, uid)
+            database.getReference(args.deviceId.substring(0, 3)).child(Utils.deviceInfo)
+                .child(args.deviceId).setValue(device)
                 .addOnSuccessListener {
                     setStatus(5)
                     navigateToDashboard()
@@ -180,7 +180,7 @@ class DeviceConfigurationFragment : BaseFragment<FragmentDeviceConfigurationBind
                 .addOnFailureListener {
                     toast(it.message.toString())
                 }
-        }?:run {
+        } ?: run {
             toast(getString(R.string.error))
         }
 

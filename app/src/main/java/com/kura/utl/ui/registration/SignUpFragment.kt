@@ -23,9 +23,8 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
     override fun getLayoutId(): Int = R.layout.fragment_sign_up
     private lateinit var mBinding: FragmentSignUpBinding
 
-    private  var fAuth: FirebaseAuth= FirebaseAuth.getInstance()
+    private var fAuth: FirebaseAuth = FirebaseAuth.getInstance()
     var database = FirebaseDatabase.getInstance()
-    var myRef = database.getReference("UTL_G-Fi")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,20 +70,19 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
         } else if (password.length < 6) {
             toast("Password Must be >= 6 Characters")
         } else {
-            mBinding.pdSignup.visibility=View.VISIBLE
-            val user=User(fullName, email, password, phone, deviceID, 0)
+            mBinding.pdSignup.visibility = View.VISIBLE
+            val user = User(fullName, email, password, phone, arrayListOf(deviceID), 0)
             fAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(OnCompleteListener<AuthResult?> { task ->
                     if (task.isSuccessful) {
                         fAuth.currentUser?.uid?.let {
-                            addInDB(user , it)
+                            addInDB(user.apply { uid = it }, it)
                         } ?: run {
                             navigateToLogin()
                         }
 
-
                     } else {
-                        mBinding.pdSignup.visibility=View.GONE
+                        mBinding.pdSignup.visibility = View.GONE
 
                         if (task.exception is FirebaseAuthUserCollisionException) {
                             Toast.makeText(context, "Email already registered", Toast.LENGTH_SHORT)
@@ -101,15 +99,16 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
         }
     }
 
-    private fun addInDB(user: User, userID: String) {
-        myRef.child(userID).child(Utils.userInfo).setValue(user)
+    private fun addInDB(user: User, uid: String) {
+        database.getReference(user.deviceID[0].substring(0, 3)).child(Utils.userInfo).child(uid)
+            .setValue(user)
             .addOnSuccessListener {
-                mBinding.pdSignup.visibility=View.GONE
-                navigateToDeviceConfiguration(user.deviceID)
+                mBinding.pdSignup.visibility = View.GONE
+                navigateToDeviceConfiguration(user.deviceID[0])
             }
             .addOnFailureListener {
                 toast(it.message.toString())
-               mBinding.pdSignup.visibility=View.GONE
+                mBinding.pdSignup.visibility = View.GONE
             }
 
     }
