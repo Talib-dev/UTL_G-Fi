@@ -86,7 +86,7 @@ private fun navigateToSignup() {
 }
 
     private fun navigateToDashboard() {
-        val action = LoginFragmentDirections.actionLoginFragmentToSignUpFragment()
+        val action = LoginFragmentDirections.actionLoginFragmentToDashboardFragment()
         findNavController().navigate(action)
     }
 }

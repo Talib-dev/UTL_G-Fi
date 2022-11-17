@@ -52,18 +52,20 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
+                        android:id="@+id/tv_system_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/medium_margin"
-                        android:text="15670"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:text="0"
                         android:textColor="@color/primaryText"
                         android:textSize="@dimen/font_heading" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/small_margin"
-                        android:layout_marginBottom="@dimen/medium_margin"
+                        android:layout_marginTop="@dimen/extra_small_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
+
                         android:text="Total System"
                         android:textColor="@color/secondaryText"
                         android:textSize="@dimen/font_sub_heading" />
@@ -89,16 +91,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/medium_margin"
-                        android:text="0526"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:text="0"
                         android:textColor="@color/primaryText"
                         android:textSize="@dimen/font_heading" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/small_margin"
-                        android:layout_marginBottom="@dimen/medium_margin"
+                        android:layout_marginTop="@dimen/extra_small_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
+
                         android:text="Total Location"
                         android:textColor="@color/secondaryText"
                         android:textSize="@dimen/font_sub_heading" />
@@ -107,7 +110,7 @@
 
 
                 <LinearLayout
-                    android:id="@+id/cardView3"
+                    android:id="@+id/ll_users"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/medium_margin"
@@ -121,18 +124,19 @@
 
 
                     <TextView
+                        android:id="@+id/tv_t_user"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/medium_margin"
-                        android:text="458465"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:text="0"
                         android:textColor="@color/primaryText"
                         android:textSize="@dimen/font_heading" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/small_margin"
-                        android:layout_marginBottom="@dimen/medium_margin"
+                        android:layout_marginTop="@dimen/extra_small_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
                         android:text="Total User"
                         android:textColor="@color/secondaryText"
                         android:textSize="@dimen/font_sub_heading" />
@@ -150,25 +154,26 @@
                     android:orientation="vertical"
                     android:background="@drawable/line_rec"
 
-                    app:layout_constraintBottom_toBottomOf="@+id/cardView3"
+                    app:layout_constraintBottom_toBottomOf="@+id/ll_users"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toTopOf="@+id/cardView3">
+                    app:layout_constraintTop_toTopOf="@+id/ll_users">
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/medium_margin"
-                        android:text="782626"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:text="0"
                         android:textColor="@color/primaryText"
                         android:textSize="@dimen/font_heading" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/small_margin"
-                        android:layout_marginBottom="@dimen/medium_margin"
+                        android:layout_marginTop="@dimen/extra_small_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
+
                         android:text="Total Faults"
                         android:textColor="@color/secondaryText"
                         android:textSize="@dimen/font_sub_heading" />
@@ -184,7 +189,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+                    app:layout_constraintTop_toBottomOf="@+id/ll_users" />
 
 
                 <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
