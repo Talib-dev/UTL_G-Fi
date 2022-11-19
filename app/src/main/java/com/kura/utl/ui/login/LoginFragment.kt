@@ -33,6 +33,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mBinding = getDataBinding()
+        fAuth.uid?.let {
+            navigateToDashboard()
+        }
         initUI()
 
     }
@@ -86,7 +89,7 @@ private fun navigateToSignup() {
 }
 
     private fun navigateToDashboard() {
-        val action = LoginFragmentDirections.actionLoginFragmentToDashboardFragment()
+        val action = LoginFragmentDirections.actionLoginFragmentToTestingFragment()
         findNavController().navigate(action)
     }
 }

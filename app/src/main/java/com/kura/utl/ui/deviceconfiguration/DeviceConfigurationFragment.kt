@@ -36,7 +36,6 @@ class DeviceConfigurationFragment : BaseFragment<FragmentDeviceConfigurationBind
     private val args: DeviceConfigurationFragmentArgs by navArgs()
     private var fAuth: FirebaseAuth = FirebaseAuth.getInstance()
     var database = FirebaseDatabase.getInstance()
-    var myRef = database.getReference("UTL_G-Fi")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

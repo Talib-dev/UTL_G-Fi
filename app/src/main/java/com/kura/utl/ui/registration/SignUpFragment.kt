@@ -100,11 +100,11 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
     }
 
     private fun addInDB(user: User, uid: String) {
-        database.getReference(user.deviceID[0].substring(0, 3)).child(Utils.userInfo).child(uid)
+        database.getReference(user.deviceID?.get(0)!!.substring(0, 3)).child(Utils.userInfo).child(uid)
             .setValue(user)
             .addOnSuccessListener {
                 mBinding.pdSignup.visibility = View.GONE
-                navigateToDeviceConfiguration(user.deviceID[0])
+                navigateToDeviceConfiguration(user.deviceID.get(0))
             }
             .addOnFailureListener {
                 toast(it.message.toString())
