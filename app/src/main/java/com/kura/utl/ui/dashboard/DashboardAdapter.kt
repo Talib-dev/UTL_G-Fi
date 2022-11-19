@@ -38,10 +38,9 @@ class DashboardAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is VHItem) {
             val data = list[position]
-            holder.binding.tvProductId.text = ""
-            holder.binding.tvProductName.text = ""
-            holder.binding.tvLocation.text = ""
-            holder.binding.tvProductId.text = ""
+            holder.binding.tvProductId.text = data.serialNo
+            holder.binding.tvProductName.text = data.sysName
+            holder.binding.tvLocation.text = data.location
         }
     }
 

@@ -9,7 +9,7 @@ data class Device(
     val activationStatus: String="",
     val installationDate: String="",
     val lastUpdate: String="",
-    val warranty: String="",
+    val warranty: Boolean=true,
     val email: String="",
     val lastPing: String="",
     )

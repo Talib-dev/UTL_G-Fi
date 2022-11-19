@@ -1,22 +1,14 @@
 package com.kura.utl.ui.dashboard
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.kura.utl.R
-import com.kura.utl.Utils.Utils
 import com.kura.utl.databinding.FragmentDeshboredBinding
-import com.kura.utl.datalayer.modal.User
 import com.kura.utl.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,12 +18,22 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
     override fun getLayoutId(): Int = R.layout.fragment_deshbored
     private lateinit var mBinding: FragmentDeshboredBinding
     private val viewModel: DashboardViewModel by viewModels()
+    private lateinit var adapter: DashboardAdapter
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.currentUser?.let {
             mBinding = getDataBinding()
+            adapter = DashboardAdapter(ArrayList()) {
+
+            }
+            getDataBinding().rvDeviceList.layoutManager = GridLayoutManager(context, 2)
+            getDataBinding().rvDeviceList.adapter = adapter
+
+
+
+
             initClickListener()
             initObserver()
 
@@ -42,11 +44,13 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
     }
 
     private fun initObserver() {
-        viewModel.userCount.observe(viewLifecycleOwner){
-            mBinding.tvTUser.text=it.toString()
+        viewModel.userCount.observe(viewLifecycleOwner) {
+            mBinding.tvTUser.text = it.toString()
         }
-        viewModel.systemCount.observe(viewLifecycleOwner){
-            mBinding.tvSystemCount.text=it.toString()
+        viewModel.systemCount.observe(viewLifecycleOwner) {
+            mBinding.tvSystemCount.text = it.toString()
+        }
+        viewModel.systemInfo.observe(viewLifecycleOwner) {
         }
     }
 

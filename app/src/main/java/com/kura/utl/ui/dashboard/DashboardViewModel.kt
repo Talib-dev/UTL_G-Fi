@@ -1,21 +1,18 @@
 package com.kura.utl.ui.dashboard
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
+import androidx.lifecycle.ViewModelStore
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.UserInfo
 import com.google.firebase.database.*
 import com.kura.utl.Utils.Utils
-import com.kura.utl.datalayer.modal.User
-import com.kura.utl.datalayer.network.NetworkStatus
+import com.kura.utl.datalayer.modal.Device
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
-import kotlin.math.log
 
 
 @HiltViewModel
@@ -23,9 +20,10 @@ class DashboardViewModel @Inject constructor(
 ) : ViewModel() {
     val currentUser = FirebaseAuth.getInstance().currentUser
     private val TAG: String = "DashboardViewModel"
+    var systemList=ArrayList<Device>()
 
 
-    var dbRef: DatabaseReference =
+    private var dbRef: DatabaseReference =
         FirebaseDatabase.getInstance().getReference("001100003".substring(0, 3))
 
     init {
@@ -38,6 +36,9 @@ class DashboardViewModel @Inject constructor(
 
     private val systemCountMutable = MutableLiveData<Long>()
     val systemCount: LiveData<Long> = systemCountMutable
+
+    private val systemInfoMutable = MutableLiveData<List<Device>>()
+    val systemInfo: LiveData<List<Device>> = systemInfoMutable
 
 
     private fun getUsersCount() {
@@ -69,6 +70,16 @@ class DashboardViewModel @Inject constructor(
             .addChildEventListener(object : ChildEventListener {
                 override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                     systemCountMutable.postValue(snapshot.childrenCount)
+                    (Dispatchers.IO)
+                    for (postSnapshot in snapshot.children) {
+                        postSnapshot.getValue(Device::class.java)?.let {
+                            systemList.add(it)
+                        }
+
+
+                    }
+                    systemInfoMutable.postValue(systemList)
+
                 }
 
                 override fun onCancelled(error: DatabaseError) {

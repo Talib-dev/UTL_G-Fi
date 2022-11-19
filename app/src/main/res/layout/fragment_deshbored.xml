@@ -178,7 +178,7 @@
 
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/DeviceListRecyclerView"
+                    android:id="@+id/rv_device_list"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_margin="@dimen/medium_margin"
