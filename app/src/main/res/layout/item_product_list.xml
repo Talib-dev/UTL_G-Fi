@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/medium_margin"
+        >
+
+
+        <ImageView
+            android:id="@+id/place_icon"
+            android:layout_width="@dimen/category_icon_size"
+            android:layout_height="@dimen/category_icon_size"
+            android:background="@drawable/ic_circular_background"
+            android:backgroundTint="@color/darkPrimaryColor"
+            android:padding="@dimen/small_margin"
+            android:src="@drawable/ic_ups"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_last_ping"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_name"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/primaryText"
+            android:textSize="@dimen/font_heading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/place_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Three phase UPS | #UHDNSUD jgbhihj bhjbnkhjmbnhkbm" />
+
+        <TextView
+            android:id="@+id/tv_last_ping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/font_sub_heading"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="1-jun-2022 00:23" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="@dimen/extra_small_margin"
+            android:background="@drawable/ic_circular_background"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_last_ping"
+            app:layout_constraintStart_toEndOf="@+id/tv_last_ping"
+            app:layout_constraintTop_toTopOf="@+id/tv_last_ping"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/extra_small_margin"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/font_sub_heading"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_last_ping"
+            app:layout_constraintEnd_toEndOf="@+id/tv_name"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/tv_last_ping"
+            app:layout_constraintVertical_bias="0.5"
+            tools:text="India gate, Delhi hbhkbhbhj jm kn knmnm " />
+
+      
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+

@@ -20,7 +20,7 @@ class DashboardViewModel @Inject constructor(
 ) : ViewModel() {
     val currentUser = FirebaseAuth.getInstance().currentUser
     private val TAG: String = "DashboardViewModel"
-    var systemList=ArrayList<Device>()
+    var systemList = ArrayList<Device>()
 
 
     private var dbRef: DatabaseReference =
@@ -66,35 +66,24 @@ class DashboardViewModel @Inject constructor(
     }
 
     private fun getSystemCount() {
-        dbRef.child(Utils.deviceInfo)
-            .addChildEventListener(object : ChildEventListener {
-                override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
-                    systemCountMutable.postValue(snapshot.childrenCount)
-                    (Dispatchers.IO)
+        dbRef.child(Utils.deviceInfo).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
                     for (postSnapshot in snapshot.children) {
+                        systemCountMutable.postValue(postSnapshot.childrenCount)
                         postSnapshot.getValue(Device::class.java)?.let {
                             systemList.add(it)
                         }
-
-
                     }
                     systemInfoMutable.postValue(systemList)
-
                 }
+            }
 
-                override fun onCancelled(error: DatabaseError) {
-                    Log.e(TAG, "onCancelled: ${error.message}")
-                }
+            override fun onCancelled(error: DatabaseError) {
+                Log.e(TAG, "onCancelled: ${error.message}")
+            }
+        })
 
-                override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
-                }
-
-                override fun onChildRemoved(snapshot: DataSnapshot) {
-                }
-
-                override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
-                }
-            })
     }
 
 

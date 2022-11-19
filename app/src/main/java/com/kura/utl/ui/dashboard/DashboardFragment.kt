@@ -28,11 +28,7 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
             adapter = DashboardAdapter(ArrayList()) {
 
             }
-            getDataBinding().rvDeviceList.layoutManager = GridLayoutManager(context, 2)
             getDataBinding().rvDeviceList.adapter = adapter
-
-
-
 
             initClickListener()
             initObserver()
@@ -51,6 +47,7 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
             mBinding.tvSystemCount.text = it.toString()
         }
         viewModel.systemInfo.observe(viewLifecycleOwner) {
+            adapter.update(it)
         }
     }
 

@@ -182,12 +182,12 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_margin="@dimen/medium_margin"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ll_users"
-                    tools:listitem="@layout/item_product" />
+                    tools:listitem="@layout/item_product_list" />
 
 
                 <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
