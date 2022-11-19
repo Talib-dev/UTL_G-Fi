@@ -8,11 +8,11 @@ import kotlin.collections.ArrayList
  * 2 - super admin
  */
 data class User(
-    val userName: String,
-    val email: String,
-    val password: String,
-    val phone: String,
-    val deviceID: ArrayList<String>,
-    val userType: Int,
+    val userName: String="",
+    val email: String="",
+    val password: String="",
+    val phone: String="",
+    val deviceID: ArrayList<String>?=null,
+    val userType: Int=0,
     var uid: String=""
 )

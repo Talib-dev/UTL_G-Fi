@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:background="@drawable/line_rec"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/small_margin">
+
+        <TextView
+            android:id="@+id/tvProductId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/font_sub_heading"
+            tools:text="#123CDDL" />
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:gravity="center"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/font_sub_heading"
+            tools:text="PCU" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:gravity="center"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/font_sub_heading"
+            tools:text="LUCKNOW" />
+
+        <TextView
+            android:id="@+id/tv_ping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:gravity="center"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/font_sub_heading"
+            tools:text="1-Jan-22 0:00:10" />
+
+
+    </LinearLayout>
+</layout>

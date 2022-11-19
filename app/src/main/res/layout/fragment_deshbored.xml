@@ -38,15 +38,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
                 <LinearLayout
                     android:id="@+id/cardView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/medium_margin"
+                    android:background="@drawable/line_rec"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:background="@drawable/line_rec"
                     app:layout_constraintEnd_toStartOf="@+id/guideline2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -65,22 +64,20 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/extra_small_margin"
                         android:layout_marginBottom="@dimen/small_margin"
-
                         android:text="Total System"
                         android:textColor="@color/secondaryText"
                         android:textSize="@dimen/font_sub_heading" />
 
                 </LinearLayout>
 
-
                 <LinearLayout
                     android:id="@+id/cardView2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/medium_margin"
+                    android:background="@drawable/line_rec"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:background="@drawable/line_rec"
 
                     app:layout_constraintBottom_toBottomOf="@+id/cardView"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -108,15 +105,14 @@
 
                 </LinearLayout>
 
-
                 <LinearLayout
                     android:id="@+id/ll_users"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/medium_margin"
+                    android:background="@drawable/line_rec"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:background="@drawable/line_rec"
 
                     app:layout_constraintEnd_toStartOf="@+id/guideline2"
                     app:layout_constraintStart_toStartOf="parent"
@@ -150,9 +146,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/medium_margin"
+                    android:background="@drawable/line_rec"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:background="@drawable/line_rec"
 
                     app:layout_constraintBottom_toBottomOf="@+id/ll_users"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -186,10 +182,12 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_margin="@dimen/medium_margin"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ll_users" />
+                    app:layout_constraintTop_toBottomOf="@+id/ll_users"
+                    tools:listitem="@layout/item_product" />
 
 
                 <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
