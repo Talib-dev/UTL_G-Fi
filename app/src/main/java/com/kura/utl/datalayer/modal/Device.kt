@@ -1,5 +1,8 @@
 package com.kura.utl.datalayer.modal
 
+import androidx.annotation.Keep
+
+@Keep
 data class Device(
     val uId: String="",
     val serialNo: String="",

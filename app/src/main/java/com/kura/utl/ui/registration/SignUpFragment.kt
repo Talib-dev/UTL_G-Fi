@@ -120,7 +120,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
 
     private fun navigateToDeviceConfiguration(deviceID: String) {
         val action = SignUpFragmentDirections.actionSignUpFragmentToGetWiFiFragment(deviceID)
-        findNavController().navigate(action)
+        findNavController().navigate(action,)
     }
 
 }

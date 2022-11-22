@@ -1,5 +1,6 @@
 package com.kura.utl.datalayer.modal
 
+import androidx.annotation.Keep
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -7,6 +8,8 @@ import kotlin.collections.ArrayList
  * 1 - admin
  * 2 - super admin
  */
+
+@Keep
 data class User(
     val userName: String="",
     val email: String="",

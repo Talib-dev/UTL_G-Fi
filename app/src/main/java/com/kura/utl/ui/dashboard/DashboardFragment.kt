@@ -1,11 +1,12 @@
 package com.kura.utl.ui.dashboard
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.kura.utl.R
 import com.kura.utl.databinding.FragmentDeshboredBinding
@@ -25,9 +26,28 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.currentUser?.let {
             mBinding = getDataBinding()
-            adapter = DashboardAdapter(ArrayList()) {
-
+            adapter = DashboardAdapter(viewModel.systemList) {
             }
+            getDataBinding().toolbar.searchInput.addTextChangedListener(object :
+                TextWatcher {
+
+
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    before: Int,
+                    count: Int
+                ) {
+                }
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable) {
+                    if (!isAdded)
+                        return
+                    adapter.filter.filter(s.toString().trim())
+                }
+            })
             getDataBinding().rvDeviceList.adapter = adapter
 
             initClickListener()
@@ -65,41 +85,42 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
             mBinding.toolbar.clSearch.visibility = View.GONE
 
         }
-        mBinding.toolbar.ivCancel.setOnClickListener {
-            mBinding.toolbar.clTags.visibility = View.VISIBLE
-            mBinding.toolbar.ivCancel.visibility = View.GONE
-            mBinding.toolbar.tvTag.visibility = View.GONE
-        }
-        mBinding.toolbar.tvName.setOnClickListener {
-            setTags(mBinding.toolbar.tvName.text.toString())
-        }
-        mBinding.toolbar.tvModel.setOnClickListener {
-            setTags(mBinding.toolbar.tvModel.text.toString())
-        }
-        mBinding.toolbar.tvLocation.setOnClickListener {
-            setTags(mBinding.toolbar.tvLocation.text.toString())
-        }
-        mBinding.toolbar.tvBattery.setOnClickListener {
-            setTags(mBinding.toolbar.tvBattery.text.toString())
-        }
-        mBinding.toolbar.tvInputType.setOnClickListener {
-            setTags(mBinding.toolbar.tvInputType.text.toString())
-        }
-        mBinding.toolbar.tvOutputType.setOnClickListener {
-            setTags(mBinding.toolbar.tvOutputType.text.toString())
-        }
+//        mBinding.toolbar.ivCancel.setOnClickListener {
+//            mBinding.toolbar.clTags.visibility = View.VISIBLE
+//            mBinding.toolbar.ivCancel.visibility = View.GONE
+//            mBinding.toolbar.tvTag.visibility = View.GONE
+//        }
+
+//        mBinding.toolbar.tvName.setOnClickListener {
+//            setTags(mBinding.toolbar.tvName.text.toString())
+//        }
+//        mBinding.toolbar.tvModel.setOnClickListener {
+//            setTags(mBinding.toolbar.tvModel.text.toString())
+//        }
+//        mBinding.toolbar.tvLocation.setOnClickListener {
+//            setTags(mBinding.toolbar.tvLocation.text.toString())
+//        }
+//        mBinding.toolbar.tvBattery.setOnClickListener {
+//            setTags(mBinding.toolbar.tvBattery.text.toString())
+//        }
+//        mBinding.toolbar.tvInputType.setOnClickListener {
+//            setTags(mBinding.toolbar.tvInputType.text.toString())
+//        }
+//        mBinding.toolbar.tvOutputType.setOnClickListener {
+//            setTags(mBinding.toolbar.tvOutputType.text.toString())
+//        }
 
 
     }
 
 
-    private fun setTags(tag: String) {
-        mBinding.toolbar.ivCancel.visibility = View.VISIBLE
-        mBinding.toolbar.tvTag.visibility = View.VISIBLE
-        mBinding.toolbar.clTags.visibility = View.GONE
-        mBinding.toolbar.tvTag.text = tag
-
-    }
+//    private fun setTags(tag: String) {
+//        mBinding.toolbar.ivCancel.visibility = View.VISIBLE
+//        mBinding.toolbar.tvTag.visibility = View.VISIBLE
+//        mBinding.toolbar.clTags.visibility = View.GONE
+//        mBinding.toolbar.tvTag.text = tag
+//
+//    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {

@@ -51,6 +51,7 @@ class DashboardAdapter(
 
     fun update(updatedList: List<Device>) {
         list = updatedList
+        filterList = list
     }
 
     class VHItem(val binding: ItemProductListBinding) : RecyclerView.ViewHolder(binding.root)
@@ -64,9 +65,8 @@ class DashboardAdapter(
                     list
                         .filter {
                             (it.sysName.contains(constraint!!, true)) or
-                                    (it.model.contains(constraint, true)) or
+                                    (it.serialNo.contains(constraint, true)) or
                                     (it.location.contains(constraint, true)) or
-                                    (it.model.contains(constraint, true)) or
                                     (it.model.contains(constraint, true))
                         }
                         .forEach { filteredList.add(it) }
