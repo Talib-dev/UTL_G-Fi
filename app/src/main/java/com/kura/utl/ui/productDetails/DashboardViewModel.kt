@@ -1,4 +1,4 @@
-package com.kura.utl.ui.dashboard
+package com.kura.utl.ui.productDetails
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -43,6 +43,10 @@ class DashboardViewModel @Inject constructor(
 
 
     private fun getUsersCount() {
+        val pushedPostRef: DatabaseReference = dbRef.push()
+        val postId = pushedPostRef.key
+
+
         dbRef.child(Utils.userInfo)
             .addChildEventListener(object : ChildEventListener {
 
@@ -80,29 +84,27 @@ class DashboardViewModel @Inject constructor(
         })
 
     }
-
-    fun getSystem(uid: String) {
-        dbRef.child(Utils.deviceInfo).orderByChild("uid").equalTo(uid)
-            .addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    if (snapshot.exists()) {
-                        for (postSnapshot in snapshot.children) {
-                            postSnapshot.getValue(Device::class.java)?.let {
-                                systemList.add(it)
-                            }
+     fun getSystem(uid: String) {
+        dbRef.child(Utils.deviceInfo).orderByChild("uid").equalTo(uid).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    for (postSnapshot in snapshot.children) {
+                        postSnapshot.getValue(Device::class.java)?.let {
+                            systemList.add(it)
                         }
-                        systemInfoMutable.postValue(systemList)
                     }
+                    systemInfoMutable.postValue(systemList)
                 }
+            }
 
-                override fun onCancelled(error: DatabaseError) {
-                    Log.e(TAG, "onCancelled: ${error.message}")
-                }
-            })
+            override fun onCancelled(error: DatabaseError) {
+                Log.e(TAG, "onCancelled: ${error.message}")
+            }
+        })
 
     }
 
-    fun getUserInfo(uid: String) {
+     fun getUserInfo(uid: String) {
         dbRef.child(Utils.userInfo).child(uid).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {

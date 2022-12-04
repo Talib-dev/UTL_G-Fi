@@ -10,18 +10,19 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        debug {
-            storeFile file(nav_version)
-            storePassword '@khanahmed'
-            keyAlias nav_version
-            keyPassword '@khanahmed'
-        }
-        release {
-            storeFile file('D:\\Kura\\UTL_G-Fi\\keys\\release_key.jks')
-            storePassword '@khanahmed'
-        }
-    }
+//    signingConfigs {
+//        debug {
+//            storeFile file('release_key.jks')
+//            storePassword '@khanahmed'
+//            keyPassword '@khanahmed'
+//        }
+//        release {
+//            storeFile file('release_key.jks')
+//            storePassword '@khanahmed'
+//            keyPassword '@khanahmed'
+//
+//        }
+//    }
     compileSdk 32
 
     buildFeatures {
@@ -43,6 +44,11 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
         }
     }
     compileOptions {

@@ -4,7 +4,7 @@ import androidx.annotation.Keep
 
 @Keep
 data class Device(
-    val uId: String="",
+    val uid: String="",
     val serialNo: String="",
     val sysName: String="",
     val model: String="",

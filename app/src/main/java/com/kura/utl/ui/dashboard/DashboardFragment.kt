@@ -24,7 +24,7 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.currentUser?.let {
+        viewModel.currentUser?.let { user ->
             mBinding = getDataBinding()
             adapter = DashboardAdapter(viewModel.systemList) {
             }
@@ -49,11 +49,27 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
                 }
             })
             getDataBinding().rvDeviceList.adapter = adapter
-
             initClickListener()
-            initObserver()
+            viewModel.getUserInfo(user.uid)
+            viewModel.getSystem(user.uid)
 
-
+            viewModel.systemInfo.observe(viewLifecycleOwner) {
+                adapter.update(it)
+            }
+            viewModel.userInfo.observe(viewLifecycleOwner) {
+                if (it.userType > 0) {
+                    mBinding.llUsers.visibility = View.VISIBLE
+                    mBinding.llTotalLocation.visibility = View.VISIBLE
+                    mBinding.llTotalSystem.visibility = View.VISIBLE
+                    mBinding.llTotalFaults.visibility = View.VISIBLE
+                    initObserver()
+                } else {
+                    mBinding.llUsers.visibility = View.GONE
+                    mBinding.llTotalLocation.visibility = View.GONE
+                    mBinding.llTotalSystem.visibility = View.GONE
+                    mBinding.llTotalFaults.visibility = View.GONE
+                }
+            }
         } ?: run {
             navigateToLogin()
         }
@@ -66,9 +82,7 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
         viewModel.systemCount.observe(viewLifecycleOwner) {
             mBinding.tvSystemCount.text = it.toString()
         }
-        viewModel.systemInfo.observe(viewLifecycleOwner) {
-            adapter.update(it)
-        }
+
     }
 
     private fun initClickListener() {
