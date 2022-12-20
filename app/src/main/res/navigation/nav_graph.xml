@@ -38,6 +38,9 @@
             android:id="@+id/action_dashboardFragment_to_loginFragment"
             app:destination="@id/loginFragment"
             app:popUpTo="@id/loginFragment"/>
+        <action
+            android:id="@+id/action_dashboardFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/getWiFiFragment"
@@ -65,6 +68,14 @@
             android:name="wifiName"
             app:argType="string" />
         <argument android:name="wifiPassword"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.kura.utl.ui.productDetails.ProductDetailsFragment"
+        android:label="ProductDetailsFragment" >
+        <argument
+            android:name="sNo"
             app:argType="string" />
     </fragment>
 </navigation>

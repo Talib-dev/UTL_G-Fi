@@ -10,6 +10,8 @@ import com.kura.utl.R
 import com.kura.utl.databinding.FragmentLoginBinding
 import com.kura.utl.databinding.FragmentProductDetailsBinding
 import com.kura.utl.ui.base.BaseFragment
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems
 
 
 class ProductDetailsFragment : BaseFragment<FragmentProductDetailsBinding>() {
@@ -17,16 +19,27 @@ class ProductDetailsFragment : BaseFragment<FragmentProductDetailsBinding>() {
     private lateinit var mBinding: FragmentProductDetailsBinding
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mBinding = getDataBinding()
+        setUpTabBar()
 
     }
+
+
+    private fun setUpTabBar() {
+        val adapter = FragmentPagerItemAdapter(
+            childFragmentManager,
+            FragmentPagerItems.with(activity)
+                .add("Live", MonitringFragment::class.java)
+                .add("Data", GraphFragment::class.java)
+                .add("Control", TableFragment::class.java)
+                .create()
+        )
+
+        mBinding.viewpager.adapter = adapter
+        mBinding.viewpagertab.setViewPager(mBinding.viewpager)
+    }
+
 
 }

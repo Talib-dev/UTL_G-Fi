@@ -83,4 +83,12 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
+
+    //smart tab
+    implementation 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
+    implementation 'com.ogaclejapan.smarttablayout:utils-v4:2.0.0@aar'
+
+    //Paging
+    implementation "androidx.paging:paging-runtime-ktx:3.0.0-beta01"
+
 }

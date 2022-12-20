@@ -27,6 +27,7 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
         viewModel.currentUser?.let { user ->
             mBinding = getDataBinding()
             adapter = DashboardAdapter(viewModel.systemList) {
+                navigateToProduct(it.serialNo)
             }
             getDataBinding().toolbar.searchInput.addTextChangedListener(object :
                 TextWatcher {
@@ -99,42 +100,13 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
             mBinding.toolbar.clSearch.visibility = View.GONE
 
         }
-//        mBinding.toolbar.ivCancel.setOnClickListener {
-//            mBinding.toolbar.clTags.visibility = View.VISIBLE
-//            mBinding.toolbar.ivCancel.visibility = View.GONE
-//            mBinding.toolbar.tvTag.visibility = View.GONE
-//        }
 
-//        mBinding.toolbar.tvName.setOnClickListener {
-//            setTags(mBinding.toolbar.tvName.text.toString())
-//        }
-//        mBinding.toolbar.tvModel.setOnClickListener {
-//            setTags(mBinding.toolbar.tvModel.text.toString())
-//        }
-//        mBinding.toolbar.tvLocation.setOnClickListener {
-//            setTags(mBinding.toolbar.tvLocation.text.toString())
-//        }
-//        mBinding.toolbar.tvBattery.setOnClickListener {
-//            setTags(mBinding.toolbar.tvBattery.text.toString())
-//        }
-//        mBinding.toolbar.tvInputType.setOnClickListener {
-//            setTags(mBinding.toolbar.tvInputType.text.toString())
-//        }
-//        mBinding.toolbar.tvOutputType.setOnClickListener {
-//            setTags(mBinding.toolbar.tvOutputType.text.toString())
-//        }
 
 
     }
 
 
-//    private fun setTags(tag: String) {
-//        mBinding.toolbar.ivCancel.visibility = View.VISIBLE
-//        mBinding.toolbar.tvTag.visibility = View.VISIBLE
-//        mBinding.toolbar.clTags.visibility = View.GONE
-//        mBinding.toolbar.tvTag.text = tag
-//
-//    }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
@@ -163,6 +135,11 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
 
     private fun navigateToLogin() {
         val action = DashboardFragmentDirections.actionDashboardFragmentToLoginFragment()
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToProduct(sNo:String) {
+        val action = DashboardFragmentDirections.actionDashboardFragmentToProductDetailsFragment(sNo)
         findNavController().navigate(action)
     }
 }
