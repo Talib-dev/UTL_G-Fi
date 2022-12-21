@@ -1,7 +1,7 @@
 package com.kura.utl.datalayer.modal
 
 data class SysInfo(
-    val Batt Config: String,
+   val BattConfig : String,
     val Input: String,
     val InsDate: String,
     val Loc: String,
