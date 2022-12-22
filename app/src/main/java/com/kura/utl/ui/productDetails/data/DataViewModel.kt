@@ -1,4 +1,4 @@
-package com.kura.utl.ui.productDetails.monitoring
+package com.kura.utl.ui.productDetails.data
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -12,29 +12,29 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class MonitoringViewModel @Inject constructor(
+class DataViewModel @Inject constructor(
 ) : ViewModel() {
 
-
+var dataList= arrayListOf<DeviceDataModel>()
     private var dbRef: DatabaseReference =
         FirebaseDatabase.getInstance().getReference("001100003".substring(0, 3))
 
-    private val systemInfoMutable = MutableLiveData<DeviceDataModel>()
-    val systemInfo: LiveData<DeviceDataModel> = systemInfoMutable
+    private val dataMutable = MutableLiveData<List<DeviceDataModel>>()
+    val data: LiveData<List<DeviceDataModel>> = dataMutable
 
 
-    fun getSystem(serialNo: String) {
-        dbRef.child(Utils.deviceData).child("11003").orderByKey().limitToLast(1)
+    fun getData(serialNo: String) {
+        dbRef.child(Utils.deviceData).child("11003")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
                         for (postSnapshot in snapshot.children) {
                             Log.d("MonitoringViewModel", postSnapshot.value.toString())
                             postSnapshot.getValue(DeviceDataModel::class.java)?.let {
-                                systemInfoMutable.postValue(it)
-
+                                dataList.add(it)
                             }
                         }
+                        dataMutable.postValue(dataList)
 
                     }
                 }
@@ -45,6 +45,5 @@ class MonitoringViewModel @Inject constructor(
             })
 
     }
-
 
 }

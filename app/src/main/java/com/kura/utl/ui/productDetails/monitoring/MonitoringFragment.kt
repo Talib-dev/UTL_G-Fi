@@ -50,10 +50,10 @@ class MonitoringFragment : BaseFragment<FragmentMonitringBinding>() {
         getDataBinding().rvSolar.adapter = solarAdapter
 
         gridAdapter = MonitoringAdapter(arrayListOf())
-        getDataBinding().rvGrid.adapter = batteryAdapter
+        getDataBinding().rvGrid.adapter = gridAdapter
 
         bypassAdapter = MonitoringAdapter(arrayListOf())
-        getDataBinding().rvBypass.adapter = gridAdapter
+        getDataBinding().rvBypass.adapter = bypassAdapter
 
         loadAdapter = MonitoringAdapter(arrayListOf())
         getDataBinding().rvLoad.adapter = loadAdapter
@@ -77,9 +77,9 @@ class MonitoringFragment : BaseFragment<FragmentMonitringBinding>() {
                 } else {
                     mBinding.llSolar.visibility = View.GONE
                 }
-                if (getGrid(data.OutputAC).isNotEmpty()) {
+                if (getGrid(data.InputAC).isNotEmpty()) {
                     mBinding.llGrid.visibility = View.VISIBLE
-                    gridAdapter.update(getGrid(data.OutputAC))
+                    gridAdapter.update(getGrid(data.InputAC))
                 } else {
                     mBinding.llGrid.visibility = View.GONE
                 }
@@ -127,12 +127,12 @@ class MonitoringFragment : BaseFragment<FragmentMonitringBinding>() {
         return data;
     }
 
-    fun getGrid(outputAc: OutputAC?): List<DataKey> {
+    fun getGrid(inputAC: InputAC?): List<DataKey> {
         var data = arrayListOf<DataKey>()
-        if (outputAc != null) {
-            data.add(DataKey("VOLTAGE", outputAc.Volt?.BR ?: ""));
-            data.add(DataKey("CURRENT", outputAc.Curr?.BR ?: ""));
-            data.add(DataKey("KHW", outputAc.ActPower?.BR ?: ""));
+        if (inputAC != null) {
+            data.add(DataKey("VOLTAGE", inputAC.Volt?.BR ?: ""));
+            data.add(DataKey("CURRENT", inputAC.Curr?.BR ?: ""));
+            data.add(DataKey("KHW", inputAC.ActPower?.BR ?: ""));
         }
         return data;
     }
