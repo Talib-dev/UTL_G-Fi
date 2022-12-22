@@ -1,12 +1,12 @@
 package com.kura.utl.datalayer.modal
 
 data class InputAC(
-    val ActPower: ActPower,
-    val ApparPower: ApparPowerX,
-    val Curr: CurrX,
-    val Frequency: FrequencyX,
-    val LoadPerc: LoadPercX,
-    val PF: PFX,
-    val ReactPower: ReactPowerX,
-    val Volt: VoltX
+    val ActPower: ActPower?=null,
+    val ApparPower: ApparPower?=null,
+    val Curr: Curr?=null,
+    val Frequency: Frequency?=null,
+    val LoadPerc: LoadPerc?=null,
+    val PF: PF?=null,
+    val ReactPower: ReactPower?=null,
+    val Volt: Volt?=null,
 )

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -18,6 +19,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/ll_battery"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_margin"
@@ -31,9 +33,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:text="Battery"
                     android:textColor="@color/secondaryText"
-                    android:textSize="@dimen/heading"
-                    android:text="Battery" />
+                    android:textSize="@dimen/heading" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_battery"
@@ -43,15 +45,15 @@
                     android:gravity="center"
                     android:textColor="@color/secondaryText"
                     android:textSize="@dimen/font_sub_heading"
-                    tools:text="PCU"
-                    tools:listitem="@layout/item_live"/>
-
-
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_live"
+                    tools:text="PCU" />
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_solar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_margin"
@@ -65,9 +67,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:text="Solar"
                     android:textColor="@color/secondaryText"
-                    android:textSize="@dimen/heading"
-                    android:text="Solar" />
+                    android:textSize="@dimen/heading" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_solar"
@@ -77,15 +79,15 @@
                     android:gravity="center"
                     android:textColor="@color/secondaryText"
                     android:textSize="@dimen/font_sub_heading"
-                    tools:text="PCU"
-                    tools:listitem="@layout/item_live"/>
-
-
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_live"
+                    tools:text="PCU" />
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_grid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_margin"
@@ -99,9 +101,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:text="Grid"
                     android:textColor="@color/secondaryText"
-                    android:textSize="@dimen/heading"
-                    android:text="Grid" />
+                    android:textSize="@dimen/heading" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_grid"
@@ -111,15 +113,15 @@
                     android:gravity="center"
                     android:textColor="@color/secondaryText"
                     android:textSize="@dimen/font_sub_heading"
-                    tools:text="PCU"
-                    tools:listitem="@layout/item_live"/>
-
-
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_live"
+                    tools:text="PCU" />
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_bypass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_margin"
@@ -133,9 +135,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:text="Bypass"
                     android:textColor="@color/secondaryText"
-                    android:textSize="@dimen/heading"
-                    android:text="Bypass" />
+                    android:textSize="@dimen/heading" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_bypass"
@@ -145,15 +147,16 @@
                     android:gravity="center"
                     android:textColor="@color/secondaryText"
                     android:textSize="@dimen/font_sub_heading"
-                    tools:text="PCU"
-                    tools:listitem="@layout/item_live"/>
-
-
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_live"
+                    tools:text="PCU" />
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_load"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_margin"
@@ -167,9 +170,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:text="Load"
                     android:textColor="@color/secondaryText"
-                    android:textSize="@dimen/heading"
-                    android:text="Load" />
+                    android:textSize="@dimen/heading" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_load"
@@ -179,14 +182,15 @@
                     android:gravity="center"
                     android:textColor="@color/secondaryText"
                     android:textSize="@dimen/font_sub_heading"
-                    tools:text="PCU"
-                    tools:listitem="@layout/item_live"/>
-
-
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_live"
+                    tools:text="PCU" />
 
 
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/ll_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_margin"
@@ -200,9 +204,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:text="Status"
                     android:textColor="@color/secondaryText"
-                    android:textSize="@dimen/heading"
-                    android:text="Status" />
+                    android:textSize="@dimen/heading" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_status"
@@ -212,12 +216,11 @@
                     android:gravity="center"
                     android:textColor="@color/secondaryText"
                     android:textSize="@dimen/font_sub_heading"
-                    tools:text="PCU"
-                    tools:listitem="@layout/item_live"/>
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_live"
+                    tools:text="PCU" />
 
             </LinearLayout>
-
-
 
 
         </LinearLayout>

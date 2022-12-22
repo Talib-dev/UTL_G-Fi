@@ -1,12 +1,12 @@
 package com.kura.utl.datalayer.modal
 
 data class SysInfo(
-   val BattConfig : String,
-    val Input: String,
-    val InsDate: String,
-    val Loc: String,
-    val MN: String,
-    val Name: String,
-    val Output: String,
-    val Rating: String
+   val BattConfig : String?=null,
+    val Input: String?=null,
+    val InsDate: String?=null,
+    val Loc: String?=null,
+    val MN: String?=null,
+    val Name: String?=null,
+    val Output: String?=null,
+    val Rating: String?=null,
 )

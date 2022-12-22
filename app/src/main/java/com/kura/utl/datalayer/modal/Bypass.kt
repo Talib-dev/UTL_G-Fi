@@ -1,12 +1,12 @@
 package com.kura.utl.datalayer.modal
 
 data class Bypass(
-    val ActPower: ActPower,
-    val ApparPower: ApparPower,
-    val Curr: Curr,
-    val Frequency: Frequency,
-    val LoadPerc: LoadPerc,
-    val PF: PF,
-    val ReactPower: ReactPower,
-    val Volt: Volt
+    val ActPower: ActPower?=null,
+    val ApparPower: ApparPower?=null,
+    val Curr: Curr?=null,
+    val Frequency: Frequency?=null,
+    val LoadPerc: LoadPerc?=null,
+    val PF: PF?=null,
+    val ReactPower: ReactPower?=null,
+    val Volt: Volt?=null,
 )

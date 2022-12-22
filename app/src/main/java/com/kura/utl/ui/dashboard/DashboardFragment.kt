@@ -3,13 +3,18 @@ package com.kura.utl.ui.dashboard
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.kura.utl.R
 import com.kura.utl.databinding.FragmentDeshboredBinding
+import com.kura.utl.ui.MainViewModel
 import com.kura.utl.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,13 +25,23 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
     private lateinit var mBinding: FragmentDeshboredBinding
     private val viewModel: DashboardViewModel by viewModels()
     private lateinit var adapter: DashboardAdapter
+    private lateinit var sharedViewModel: MainViewModel
 
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
+
+
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.currentUser?.let { user ->
             mBinding = getDataBinding()
             adapter = DashboardAdapter(viewModel.systemList) {
+                sharedViewModel.serialNo=it.serialNo
                 navigateToProduct(it.serialNo)
             }
             getDataBinding().toolbar.searchInput.addTextChangedListener(object :
@@ -58,6 +73,8 @@ class DashboardFragment : BaseFragment<FragmentDeshboredBinding>() {
                 adapter.update(it)
             }
             viewModel.userInfo.observe(viewLifecycleOwner) {
+                sharedViewModel.userDetails=it
+
                 if (it.userType > 0) {
                     mBinding.llUsers.visibility = View.VISIBLE
                     mBinding.llTotalLocation.visibility = View.VISIBLE

@@ -11,11 +11,12 @@ import com.kura.utl.R
 import com.kura.utl.databinding.ItemLiveBinding
 import com.kura.utl.databinding.ItemProductBinding
 import com.kura.utl.databinding.ItemProductListBinding
+import com.kura.utl.datalayer.modal.DataKey
 import com.kura.utl.datalayer.modal.Device
 
 
 class MonitoringAdapter(
-    private var list: List<LiveModel>,
+    private var list: List<DataKey>,
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -40,13 +41,14 @@ class MonitoringAdapter(
         if (holder is VHItem) {
             val data = list[position]
             holder.binding.tvName.text = data.name
-            holder.binding.tvName.text = data.value
+            holder.binding.tvValue.text = data.value
 
         }
     }
 
-    fun update(updatedList: List<LiveModel>) {
+    fun update(updatedList: List<DataKey>) {
         list = updatedList
+        notifyDataSetChanged()
     }
 
     class VHItem(val binding: ItemLiveBinding) : RecyclerView.ViewHolder(binding.root)
