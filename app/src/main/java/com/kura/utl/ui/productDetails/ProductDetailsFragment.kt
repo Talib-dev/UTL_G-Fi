@@ -5,6 +5,7 @@ import android.view.View
 import com.kura.utl.R
 import com.kura.utl.databinding.FragmentProductDetailsBinding
 import com.kura.utl.ui.base.BaseFragment
+import com.kura.utl.ui.productDetails.control.ControlFragment
 import com.kura.utl.ui.productDetails.data.DataFragment
 import com.kura.utl.ui.productDetails.monitoring.MonitoringFragment
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter
@@ -30,7 +31,7 @@ class ProductDetailsFragment : BaseFragment<FragmentProductDetailsBinding>() {
             FragmentPagerItems.with(activity)
                 .add("Live", MonitoringFragment::class.java)
                 .add("Data", DataFragment::class.java)
-                .add("Control", TableFragment::class.java)
+                .add("Control", ControlFragment::class.java)
                 .create()
         )
 
