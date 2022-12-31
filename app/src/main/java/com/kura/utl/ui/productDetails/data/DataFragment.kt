@@ -1,5 +1,8 @@
 package com.kura.utl.ui.productDetails.data
 
+import android.app.DatePickerDialog
+import android.icu.text.SimpleDateFormat
+import android.icu.util.Calendar
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,6 +18,7 @@ import com.kura.utl.ui.base.BaseFragment
 import com.kura.utl.ui.productDetails.monitoring.MonitoringAdapter
 import com.kura.utl.ui.productDetails.monitoring.MonitoringViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 
 @AndroidEntryPoint
@@ -47,6 +51,50 @@ class DataFragment : BaseFragment<FragmentGraphBinding>() {
 
             }
 
+        }
+
+        val calFrom = Calendar.getInstance()
+        val dateSetListener =
+            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                calFrom.set(Calendar.YEAR, year)
+                calFrom.set(Calendar.MONTH, monthOfYear)
+                calFrom.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+                val myFormat = "dd.MM.yyyy" // mention the format you need
+                val sdf = SimpleDateFormat(myFormat, Locale.US)
+                mBinding.tvFromTime.text = sdf.format(calFrom.time)
+                viewModel.startTime = sdf.format(calFrom.time)
+
+            }
+        mBinding.tvFromTime.setOnClickListener {
+            DatePickerDialog(
+                requireContext(), dateSetListener,
+                calFrom.get(Calendar.YEAR),
+                calFrom.get(Calendar.MONTH),
+                calFrom.get(Calendar.DAY_OF_MONTH)
+            ).show()
+        }
+
+        val calTo = Calendar.getInstance()
+        val dateSetListenerTo =
+            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                calTo.set(Calendar.YEAR, year)
+                calTo.set(Calendar.MONTH, monthOfYear)
+                calTo.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+                val myFormat = "dd.MM.yyyy" // mention the format you need
+                val sdf = SimpleDateFormat(myFormat, Locale.US)
+                mBinding.tvToTime.text = sdf.format(calTo.time)
+                viewModel.endTime = sdf.format(calFrom.time)
+
+            }
+        mBinding.tvToTime.setOnClickListener {
+            DatePickerDialog(
+                requireContext(), dateSetListenerTo,
+                calTo.get(Calendar.YEAR),
+                calTo.get(Calendar.MONTH),
+                calTo.get(Calendar.DAY_OF_MONTH)
+            ).show()
         }
     }
 }

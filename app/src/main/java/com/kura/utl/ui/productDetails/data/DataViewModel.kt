@@ -15,7 +15,9 @@ import javax.inject.Inject
 class DataViewModel @Inject constructor(
 ) : ViewModel() {
 
-var dataList= arrayListOf<DeviceDataModel>()
+    var startTime: String = ""
+    var endTime: String = ""
+    var dataList = arrayListOf<DeviceDataModel>()
     private var dbRef: DatabaseReference =
         FirebaseDatabase.getInstance().getReference("001100003".substring(0, 3))
 

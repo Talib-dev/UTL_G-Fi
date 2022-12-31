@@ -13,10 +13,113 @@
         android:orientation="vertical"
         android:padding="@dimen/small_margin">
 
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="@dimen/small_margin"
+            android:background="@color/primaryText" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/primaryText" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="13"
+                android:textStyle="bold"
+                android:ellipsize="end"
+
+                android:gravity="center"
+                android:lines="1"
+                android:maxLines="1"
+                android:padding="2dp"
+                android:singleLine="true"
+                android:text="From"
+                android:textColor="@color/primaryText"
+                android:textSize="@dimen/font_heading" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/primaryText" />
+
+            <TextView
+                android:id="@+id/tv_from_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="none"
+                android:textColor="@color/primaryText"
+                android:textSize="@dimen/font_sub_heading" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/primaryText" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:lines="1"
+                android:maxLines="1"
+                android:padding="2dp"
+                android:singleLine="true"
+                android:text="to"
+                android:textColor="@color/primaryText"
+                android:textSize="@dimen/font_heading" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/primaryText" />
+
+            <TextView
+                android:id="@+id/tv_to_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="none"
+                android:textColor="@color/primaryText"
+                android:textSize="@dimen/font_sub_heading" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/primaryText" />
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primaryText" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/medium_margin"
             android:background="@color/primaryText" />
 
         <LinearLayout
